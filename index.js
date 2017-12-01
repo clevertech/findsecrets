@@ -25,19 +25,19 @@ const fullpath = path.isAbsolute(file) ? file : path.join(process.cwd(), file)
 try {
   const source = fs.readFileSync(fullpath, 'utf8')
   const lines = source.split('\n')
-  const error = lines.reduce((acc, line, lineNumber) => {
+  const errors = lines.reduce((errors, line, lineNumber) => {
     const words = line.split(/\W+/)
-    const err = words.reduce((acc, word) => {
+    words.forEach(word => {
       const entropy = simpleEntropy(word)
       if (entropy > 4) {
-        console.log(`Found secret at line ${lineNumber + 1}`, word)
-        return true
+        errors.push(`    at line ${lineNumber + 1} ${word.substring(0, word.length / 2 + 1)}...`)
       }
-      return acc
     }, false)
-    return acc || err
-  }, false)
-  if (error) {
+    return errors
+  }, [])
+  if (errors.length > 0) {
+    console.error('Found secrets in', fullpath)
+    errors.forEach(error => console.error(error))
     process.exit(1)
   }
 } catch (err) {
