@@ -22,6 +22,10 @@ if (!file) {
 }
 
 const fullpath = path.isAbsolute(file) ? file : path.join(process.cwd(), file)
+if (path.basename(fullpath).startsWith('.env')) {
+  console.log('Ignoring file', fullpath)
+  process.exit()
+}
 try {
   const source = fs.readFileSync(fullpath, 'utf8')
   const lines = source.split('\n')
