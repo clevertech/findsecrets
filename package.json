@@ -1,0 +1,16 @@
+{
+  "name": "@clevertech.biz/findsecrets",
+  "version": "0.1.0",
+  "description": "Prevent pushing secrets to the repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "findsecrets": "./index.js"
+  },
+  "keywords": [],
+  "author": "Alberto Gimeno <gimenete@gimenete.net>",
+  "license": "MIT",
+  "dependencies": {}
+}
