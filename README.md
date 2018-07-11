@@ -1,6 +1,6 @@
 # findsecrets
 
-Looks for secrets in your code. Ignores `.env` files. The idea is preventing pushing secrets to a repository. So it is useful to invoke it in a `precommit` hook. You can it in combination with `lint-staged` and `husky` for example so all (and only) modified files in a commit get analyzed.
+Looks for secrets in your code. Ignores `.env` files. The idea is preventing pushing secrets to a repository, so it is useful to invoke it in a `precommit` hook. You can use it in combination with `lint-staged` and `husky` for example so all (and only) modified files in a commit get analyzed.
 
 Example secret:
 
