@@ -29,11 +29,11 @@ if (path.basename(fullpath).startsWith('.env')) {
 try {
   const source = fs.readFileSync(fullpath, 'utf8')
   const lines = source.split('\n')
-  if (lines[0] && lines[0].includes('finsecrets-ignore-file')) {
+  if (lines[0] && lines[0].includes('findsecrets-ignore-file')) {
     process.exit()
   }
   const errors = lines.reduce((errors, line, lineNumber) => {
-    if (line.includes('finsecrets-ignore-line')) {
+    if (line.includes('findsecrets-ignore-line')) {
       return errors
     }
     const words = line.split(/\W+/)

@@ -46,8 +46,8 @@ findsecrets /path/to/code.js
 Sometimes you'll get false positives. You can ignore a line like this:
 
 ```javascript
-const falsePositive = 'yLjaLLAnycACDX3aAeA8Vnac' // finsecrets-ignore-line
+const falsePositive = 'yLjaLLAnycACDX3aAeA8Vnac' // findsecrets-ignore-line
 ```
 
-You can also ignore a whole file by putting a comment containing `finsecrets-ignore-file` in the first line.
+You can also ignore a whole file by putting a comment containing `findsecrets-ignore-file` in the first line.
 

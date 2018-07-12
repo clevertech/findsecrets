@@ -1,6 +1,6 @@
 {
   "name": "@clevertech.biz/findsecrets",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Prevent pushing secrets to the repository",
   "main": "index.js",
   "scripts": {
